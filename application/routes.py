@@ -29,7 +29,9 @@ def upload():
         sentence = ""
         
         f = request.files.get('file')
-        filename, extension = f.filename.split(".")
+        # rsplit guards against filenames containing multiple dots
+        # (e.g. "my.photo.png" -> extension "png").
+        filename, extension = f.filename.rsplit(".", 1)
         generated_filename = secrets.token_hex(10) + f".{extension}"
        
 
