@@ -1,19 +1,27 @@
-# pip install googletrans==3.1.0a0
-from cv2 import triangulatePoints
+"""Translation helpers and the supported-language map.
+
+Uses googletrans (pip install googletrans==3.1.0a0) for language
+detection and translation.
+"""
+
 from googletrans import Translator
 
 translator = Translator()
 
+
 def detect_language(text):
-    # get language used
+    """Detect the language of `text`.
+
+    Returns a (lang_code, confidence) tuple, e.g. ("en", 0.98).
+    """
     detected_lang_data = translator.detect(text)
-    # print(lang)
     lang = detected_lang_data.lang
     conf = detected_lang_data.confidence
-
     return lang, conf
 
+
 def translate_text(text, dest):
+    """Translate `text` into the language code `dest` and return the string."""
     translated_text = translator.translate(text, dest=dest)
     return translated_text.text
 
