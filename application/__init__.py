@@ -5,7 +5,9 @@ from flask_session import Session
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = "JLK24JO3I@!!$#Yoiouoln!#@oo=5y9y9youjuy952ou9859u923kjfhiy23ho"
+# Read the secret key from the environment in production; the fallback is
+# only for local development.
+app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY", "dev-only-secret-key")
 
 # Sessions 
 SESSION_TYPE = 'filesystem'
