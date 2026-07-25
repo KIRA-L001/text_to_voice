@@ -1,2 +1,13 @@
+flask
+flask-wtf
+flask-session
+flask-dropzone
+wtforms
+gtts
+googletrans==3.1.0a0
+pytesseract
+opencv-python
+Pillow
+numpy
 gunicorn==22.0.0
 packaging==24.1
