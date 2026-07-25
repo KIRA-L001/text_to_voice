@@ -157,3 +157,7 @@ cython_debug/
 #.idea/
 
 # End of https://www.toptal.com/developers/gitignore/api/python
+# Project-specific
+flask_session/
+application/static/audio_files/
+application/static/uploaded_files/
